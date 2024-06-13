@@ -4,7 +4,9 @@ Diferente da herança, você pode utilizar uma Trait em classes de diferentes do
 Nesse pequeno projeto, vamos utilizar Traits, Models e sessão, para ilustrar como poderíamos criar um sistema multi-tenant.
 
 # Configurando variáveis de ambiente
-
+```bash
+cp .env.example .env
+```
 
 # Compilando a imagem
 ```bash
@@ -27,9 +29,9 @@ O entrypoint configurado no Dockerfile, utiliza o servidor web embutido no PHP.
 docker exec phplaravel composer install
 ```
 
-# Criando a chave JWT do aplicativo
+# Gerando chave de encriptação do Laravel
 ```bash
-docker exec phplaravel php artisan jwt:secret
+docker exec phplaravel php artisan key:generate
 ```
 
 # Criando a estrutura do banco de dados
