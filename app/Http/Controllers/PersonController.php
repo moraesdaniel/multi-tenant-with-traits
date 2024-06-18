@@ -10,7 +10,8 @@ class PersonController extends Controller
 {
     public function index(): View
     {
-        return view('person.person');
+        $people = Person::all();
+        return view('person.person', ['people' => $people]);
     }
 
     public function store(Request $request)
@@ -21,7 +22,7 @@ class PersonController extends Controller
         ]);
 
         $person->save();
-
-        return view('person.person');
+        $people = Person::all();
+        return view('person.person', ['people' => $people]);
     }
 }

@@ -2,14 +2,14 @@
 
 namespace App\Models;
 
-use App\PutTenantId;
+use App\TenantIdTrait;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Person extends Model
 {
     use HasFactory;
-    use PutTenantId;
+    use TenantIdTrait;
 
     protected $fillable = [
         'id', 'name'
