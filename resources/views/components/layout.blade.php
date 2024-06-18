@@ -23,7 +23,7 @@
         <nav class="navbar bg-success bg-gradient">
             <div class="container-fluid container">
                 <a href="/tenant" class="text-decoration-none">
-                    <span class="navbar-brand text-light"><i class="fa-solid fa-file-pdf"></i>  POC Traits</span>
+                    <span class="navbar-brand text-light"><i class="fa-solid fa-file-pdf"></i>  POC Multi Tenant</span>
                 </a>
                 <span class="navbar-text text-light">{{ $title }}</span>
             </div>
