@@ -10,7 +10,8 @@ class ItemController extends Controller
 {
     public function index(): View
     {
-        return view('item.item');
+        $items = Item::all();
+        return view('item.item', ['items' => $items]);
     }
 
     public function store(Request $request)
@@ -22,6 +23,8 @@ class ItemController extends Controller
 
         $item->save();
 
-        return view('item.item');
+        $items = Item::all();
+
+        return view('item.item', ['items' => $items]);
     }
 }

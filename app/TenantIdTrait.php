@@ -2,9 +2,7 @@
 
 namespace App;
 
-use Illuminate\Support\Facades\Log;
-
-trait PutTenantId
+trait TenantIdTrait
 {
     protected static function boot()
     {
@@ -12,10 +10,10 @@ trait PutTenantId
 
         $putTenantIdCallback = function ($model) {
             $tenantId = (int) session()->get('tenant_id');
-            Log::info("Buscando o tenant_id: $tenantId");
             $model->tenant_id = $tenantId;
         };
 
         static::creating($putTenantIdCallback);
+        static::addGlobalScope(new TenantScope);
     }
 }
